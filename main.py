@@ -1,5 +1,9 @@
-import os
+""" Portofolio project #1 from 100 Days of Code Course on Udemy,Section 82 """
 
+#TODO: new-feature: add choice to encode vs decode text and demorsify a morsecode to regular text
+#TODO: new-feature: maybe add turtle function to "draw the morse code"
+
+#Dictionary for Morse codes for alpenum characters including Norwegian æ,ø,å
 MORSE_DICT={
     "a":"•⁃",
     "b":"⁃•••",
@@ -43,17 +47,22 @@ MORSE_DICT={
     " ":"  ",
 }
 
+
+#function for taking input from user
+"""take funtion from user, i prefer to practise calling functions in my coding now,
+this could easily be done within main function as well """
 def take_input():
     return input("What text would you like to morsify?\n")
 
-def look_up_morse(letter):
+#Function to look up letter in dictionary, should return correct Morse encoding, if no match return the letter/char i.e !
+def look_up_morse(letter: str) -> str:
     try:
         return MORSE_DICT[letter]
     except:
         return letter
 
+#main function
 def main():
-    os.system('clear')
     text=take_input()
     morse_encoded=""
     for _ in text:
